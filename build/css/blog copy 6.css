@@ -1,0 +1,1302 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+@-webkit-keyframes rotate_img {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate_img {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes un_rotate_img {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes un_rotate_img {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+html {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+html body {
+  width: 100%;
+  height: 100%;
+}
+html body header {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 5000;
+}
+html body header .gnb_area {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+html body header .gnb_area .gnb_main {
+  position: absolute;
+  top: 3vh;
+  right: 3vh;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  background-color: #F65;
+  pointer-events: none;
+  opacity: 0;
+  cursor: pointer;
+}
+html body header .gnb_area .gnb_text {
+  position: absolute;
+  top: -10vh;
+  right: -20vh;
+  width: 20vh;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+html body header .gnb_area .gnb_text p {
+  color: white;
+  font-size: 3vh;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+html body header .gnb_area .gnb_text p:hover {
+  transform: translateX(-1vh);
+  filter: drop-shadow(0.5vh 0.5vh 0 rgba(0, 0, 0, 0.3));
+  transition: all 0.2s;
+}
+html body header .gnb_area .gnb_text i {
+  flex: none;
+  position: absolute;
+  top: -5vh;
+  right: 3vh;
+  color: white;
+  font-size: 3vh;
+  font-font-weight: 900;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+html body header .gnb_area .gnb_text i:hover {
+  filter: drop-shadow(0.5vh 0.5vh 0 rgba(0, 0, 0, 0.3));
+  transition: all 0.2s;
+}
+html body main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  z-index: 1000;
+}
+html body main .background_page {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  pointer-events: none;
+}
+html body main .background_page .background_area_1 {
+  width: 80%;
+  height: 100%;
+  right: 0;
+  position: absolute;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+html body main .background_page .background_area_1 > p {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 10vw;
+  font-weight: 600;
+}
+html body main .background_page .background_area_2 {
+  width: 100%;
+  height: 100%;
+}
+html body main .background_page .background_area_2 div {
+  width: 100%;
+  height: 0.1vw;
+  background-color: #444;
+  position: absolute;
+  left: 0;
+}
+html body main .background_page .background_area_2 div:nth-child(1) {
+  top: 90vh;
+}
+html body main .background_page .background_area_2 div:nth-child(2) {
+  top: 95vh;
+}
+html body main .home_page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  display: none;
+}
+html body main .home_page .card_list {
+  width: 100%;
+  height: 50vh;
+  position: absolute;
+  top: 30vh;
+  transform-origin: center bottom;
+}
+html body main .home_page .card_list .card_item {
+  position: absolute;
+  width: 24vw;
+  height: 28.5vw;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+html body main .home_page .card_list .card_item > article:first-child {
+  width: 95%;
+  height: 100%;
+  background-color: #FFF;
+  border: 0.15vw solid #333;
+  pointer-events: all;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 1vw;
+}
+html body main .home_page .card_list .card_item > article:first-child > section {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
+}
+html body main .home_page .card_list .card_item > article:first-child > section > article {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+html body main .home_page .card_list .card_item > article:first-child .img_over {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #FFF;
+  z-index: 100;
+  opacity: 1;
+  pointer-events: none;
+}
+html body main .home_page .card_list .card_item > article:first-child > article:last-child {
+  width: 95%;
+  height: 95%;
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+html body main .home_page .card_list .card_item > article:first-child > article:last-child > p {
+  font-size: 3vw;
+  font-weight: 700;
+}
+html body main .home_page .card_list .card_item .inner_box_1 .inner_img > article {
+  background-image: url("../img/photo.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .home_page .card_list .card_item .inner_box_2 .inner_img > article {
+  background-image: url("../img/photo2.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .home_page .card_list .card_item .inner_box_3 .inner_img > article {
+  background-image: url("../img/photo3.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .home_page .card_list .card_item .inner_box_4 .inner_img > article {
+  background-image: url("../img/photo4.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .home_page .card_list .card_item > div:last-child {
+  width: 0.1vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+html body main .home_page .card_list .card_1, html body main .home_page .card_list .card_5 {
+  top: -5vh;
+}
+html body main .home_page .card_list .card_1 > div:last-child, html body main .home_page .card_list .card_5 > div:last-child {
+  height: 100vh;
+}
+html body main .home_page .card_list .card_2, html body main .home_page .card_list .card_6 {
+  top: 11vh;
+}
+html body main .home_page .card_list .card_2 > div:last-child, html body main .home_page .card_list .card_6 > div:last-child {
+  height: 100vh;
+}
+html body main .home_page .card_list .card_3, html body main .home_page .card_list .card_7 {
+  top: 0vh;
+}
+html body main .home_page .card_list .card_3 > div:last-child, html body main .home_page .card_list .card_7 > div:last-child {
+  height: 65vh;
+}
+html body main .home_page .card_list .card_4, html body main .home_page .card_list .card_8 {
+  top: 6vh;
+}
+html body main .about_page {
+  width: 100%;
+  height: 100%;
+  display: none;
+  pointer-events: none;
+  position: relative;
+}
+html body main .about_page .left_about {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+html body main .about_page .left_about article {
+  width: 33vw;
+  height: 33vw;
+  overflow: hidden;
+  border-radius: 160% 135% 155% 135%/145% 165% 135% 155%;
+  position: relative;
+  -webkit-animation: rotate_img 10s infinite linear;
+  animation: rotate_img 10s infinite linear;
+  filter: drop-shadow(0 0 2vw rgba(0, 0, 0, 0.3));
+}
+html body main .about_page .left_about article div {
+  position: absolute;
+  top: -3.5vw;
+  left: -3.5vw;
+  opacity: 1;
+  width: 40vw;
+  height: 40vw;
+  -webkit-animation: un_rotate_img 10s infinite linear;
+  animation: un_rotate_img 10s infinite linear;
+  background-image: url("../img/photo.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 40%;
+}
+html body main .about_page .right_about {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+html body main .about_page .right_about > div {
+  width: 20%;
+  height: 0.1vw;
+  background-color: #333;
+  transform: scaleX(0);
+  margin-top: 1.5vw;
+  margin-bottom: 1.5vw;
+}
+html body main .about_page .right_about > section {
+  width: 100%;
+  overflow: hidden;
+}
+html body main .about_page .right_about > section p {
+  width: 100%;
+  color: #333;
+  text-align: left;
+  font-size: 2.7vw;
+  font-weight: 500;
+  font-family: "Jua", sans-serif;
+}
+html body main .about_page .right_about > section p span {
+  color: #F65;
+  filter: drop-shadow(0.1vw 0.1vw 0 rgba(0, 0, 0, 0.3));
+  font-size: 2.7vw;
+  font-weight: 500;
+  font-family: "Jua", sans-serif;
+}
+html body main .about_page .right_about > section:nth-child(1) p {
+  transform: translateY(50vh);
+}
+html body main .about_page .right_about > section:nth-child(3) p {
+  color: #666;
+  font-size: 2vw;
+  font-weight: 400;
+  font-family: "Jua", sans-serif;
+  transform: translateY(-50vh);
+}
+html body main .about_page .sub_about {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 0;
+  bottom: 3vh;
+  border-bottom: 0.15vw solid #333;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+html body main .about_page .sub_about article {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  pointer-events: all;
+  margin-bottom: 0.5vw;
+  cursor: pointer;
+}
+html body main .about_page .sub_about article i, html body main .about_page .sub_about article p {
+  display: inline-block;
+  color: #333;
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+html body main .about_page .sub_about article i {
+  transition: all 0.2s;
+  font-size: 2vw;
+  margin-right: 1vw;
+}
+html body main .about_page .sub_about article:hover i {
+  transition: all 0.2s;
+  color: #F65;
+  filter: drop-shadow(0.3vw 0.3vw 0 rgba(0, 0, 0, 0.3));
+}
+html body main .time_page {
+  width: 100%;
+  height: 100%;
+  display: none;
+  pointer-events: none;
+  position: relative;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+html body main .time_page .time_left {
+  width: 20%;
+  height: 100%;
+  position: relative;
+}
+html body main .time_page .time_left article {
+  background: #F65;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+html body main .time_page .time_left article:nth-child(1) {
+  width: 10vw;
+  height: 0%;
+}
+html body main .time_page .time_left article:nth-child(2) {
+  width: 20vw;
+  height: 20vw;
+  border-radius: 50%;
+  top: calc(50% - 10vw);
+  transform: translateX(-20vw);
+}
+html body main .time_page .time_left article:nth-child(2) > div {
+  position: absolute;
+  top: 1vw;
+  left: 1vw;
+  width: 18vw;
+  height: 18vw;
+  border-radius: 50%;
+  transform: scale(0);
+  background-image: url("../img/photo5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .time_page .time_right {
+  width: 80%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+html body main .time_page .time_right .time_bar_area {
+  margin-top: 5vh;
+  width: 70vw;
+  height: 60%;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+html body main .time_page .time_right .time_bar_area .center_line {
+  position: absolute;
+  z-index: -100;
+  width: 0.5vw;
+  height: 0%;
+  top: 0;
+  left: calc(50% - 0.25vw);
+  border-radius: 0.5vw;
+  background: linear-gradient(to bottom, #F15A5A 0%, #F15A5A 20%, #F0C419 20%, #F0C419 40%, #4EBA6F 40%, #4EBA6F 60%, #2D95BF 60%, #2D95BF 80%, #955BA5 80%, #955BA5 100%);
+}
+html body main .time_page .time_right .time_bar_area .line_dot {
+  position: absolute;
+  z-index: -100;
+  width: 0.5vw;
+  height: 63%;
+  top: 19%;
+  left: calc(50% - 0.25vw);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+html body main .time_page .time_right .time_bar_area .line_dot div {
+  width: 0.5vw;
+  height: 0.5vw;
+  border-radius: 50%;
+  background: #FFF;
+  border: 0.25vw solid;
+  border-color: #F0C419;
+  transform: scale(0);
+}
+html body main .time_page .time_right .time_bar_area .line_dot div:nth-child(2) {
+  border-color: #4EBA6F;
+}
+html body main .time_page .time_right .time_bar_area .line_dot div:nth-child(3) {
+  border-color: #2D95BF;
+}
+html body main .time_page .time_right .time_bar_area .line_dot div:nth-child(4) {
+  border-color: #955BA5;
+}
+html body main .time_page .time_right .time_bar_area .time_box_1, html body main .time_page .time_right .time_bar_area .time_box_3 {
+  width: 50%;
+  height: 20%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+html body main .time_page .time_right .time_bar_area .time_box_1 > article:nth-child(1), html body main .time_page .time_right .time_bar_area .time_box_3 > article:nth-child(1) {
+  width: 8vw;
+  height: 8vw;
+  border-radius: 50%;
+  background-color: #F0C419;
+  transform: scale(0);
+}
+html body main .time_page .time_right .time_bar_area .time_box_1 > article:nth-child(1) i, html body main .time_page .time_right .time_bar_area .time_box_3 > article:nth-child(1) i {
+  width: 80%;
+  height: 80%;
+  margin-top: 10%;
+  margin-left: 10%;
+  border-radius: 50%;
+  background-color: #FFF;
+  color: #666;
+  text-align: center;
+  line-height: 6.4vw;
+  filter: drop-shadow(0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.3));
+  font-size: 4vw;
+  font-weight: 800;
+}
+html body main .time_page .time_right .time_bar_area .time_box_1 > article:nth-child(2), html body main .time_page .time_right .time_bar_area .time_box_3 > article:nth-child(2) {
+  height: 100%;
+  width: 27vw;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+}
+html body main .time_page .time_right .time_bar_area .time_box_1 > article:nth-child(2) > p:nth-child(1), html body main .time_page .time_right .time_bar_area .time_box_3 > article:nth-child(2) > p:nth-child(1) {
+  color: #F65;
+  transform: translateY(-150%);
+  font-size: 2vw;
+  font-weight: 600;
+  font-family: "Jua", sans-serif;
+}
+html body main .time_page .time_right .time_bar_area .time_box_1 > article:nth-child(2) div, html body main .time_page .time_right .time_bar_area .time_box_3 > article:nth-child(2) div {
+  width: 25vw;
+  height: 0vh;
+  border-bottom: 0.2vw dotted #333;
+  transform: translateX(110%);
+}
+html body main .time_page .time_right .time_bar_area .time_box_1 > article:nth-child(2) > p:nth-child(n+3), html body main .time_page .time_right .time_bar_area .time_box_3 > article:nth-child(2) > p:nth-child(n+3) {
+  color: #333;
+  margin-bottom: 0.5vw;
+  transform: translateY(150%);
+  font-size: 1.5vw;
+  font-weight: 500;
+  font-family: "Jua", sans-serif;
+}
+html body main .time_page .time_right .time_bar_area .time_box_2, html body main .time_page .time_right .time_bar_area .time_box_4 {
+  width: 50%;
+  height: 20%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 50%;
+}
+html body main .time_page .time_right .time_bar_area .time_box_2 > article:nth-child(2), html body main .time_page .time_right .time_bar_area .time_box_4 > article:nth-child(2) {
+  width: 8vw;
+  height: 8vw;
+  border-radius: 50%;
+  background-color: #2D95BF;
+  transform: scale(0);
+}
+html body main .time_page .time_right .time_bar_area .time_box_2 > article:nth-child(2) i, html body main .time_page .time_right .time_bar_area .time_box_4 > article:nth-child(2) i {
+  width: 80%;
+  height: 80%;
+  margin-top: 10%;
+  margin-left: 10%;
+  border-radius: 50%;
+  background-color: #FFF;
+  color: #666;
+  text-align: center;
+  line-height: 6.4vw;
+  filter: drop-shadow(0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.3));
+  font-size: 4vw;
+  font-weight: 800;
+}
+html body main .time_page .time_right .time_bar_area .time_box_2 > article:nth-child(1), html body main .time_page .time_right .time_bar_area .time_box_4 > article:nth-child(1) {
+  height: 100%;
+  width: 27vw;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+}
+html body main .time_page .time_right .time_bar_area .time_box_2 > article:nth-child(1) > p:nth-child(1), html body main .time_page .time_right .time_bar_area .time_box_4 > article:nth-child(1) > p:nth-child(1) {
+  color: #F65;
+  transform: translateY(-150%);
+  font-size: 2vw;
+  font-weight: 600;
+  font-family: "Jua", sans-serif;
+}
+html body main .time_page .time_right .time_bar_area .time_box_2 > article:nth-child(1) div, html body main .time_page .time_right .time_bar_area .time_box_4 > article:nth-child(1) div {
+  width: 25vw;
+  height: 0vh;
+  border-bottom: 0.2vw dotted #333;
+  transform: translateX(-110%);
+}
+html body main .time_page .time_right .time_bar_area .time_box_2 > article:nth-child(1) > p:nth-child(n+3), html body main .time_page .time_right .time_bar_area .time_box_4 > article:nth-child(1) > p:nth-child(n+3) {
+  color: #333;
+  margin-bottom: 0.5vw;
+  transform: translateY(150%);
+  font-size: 1.5vw;
+  font-weight: 500;
+  font-family: "Jua", sans-serif;
+}
+html body main .time_page .time_right .time_bar_area .time_box_3 > article:nth-child(1) {
+  background-color: #4EBA6F;
+}
+html body main .time_page .time_right .time_bar_area .time_box_4 > article:nth-child(2) {
+  background-color: #955BA5;
+}
+html body main .time_page .time_right .license_area {
+  margin-left: -20vw;
+  width: 30vw;
+  height: 30%;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+html body main .time_page .time_right .license_area > article {
+  position: absolute;
+  z-index: 100;
+  top: -2vh;
+  left: 0;
+  width: 10vw;
+  height: 4vw;
+  border-radius: 0.5vw;
+  border: 0.3vw solid #F65;
+  background-color: #FFF;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
+}
+html body main .time_page .time_right .license_area > article p {
+  text-align: center;
+  color: #F65;
+  font-size: 2vw;
+  font-weight: 600;
+  font-family: "Jua", sans-serif;
+}
+html body main .time_page .time_right .license_area > ul {
+  width: 60%;
+  height: 80%;
+  border-radius: 1vw;
+  border: 0.3vw solid #333;
+  background-color: #FFF;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  transform: scale(0);
+}
+html body main .time_page .time_right .license_area > ul li {
+  margin-left: 3vw;
+  list-style: circle;
+  color: #333;
+  font-size: 1.5vw;
+  font-weight: 500;
+  font-family: "Jua", sans-serif;
+}
+html body main .time_page .time_right .license_area > ul li:nth-child(2) {
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
+}
+html body main .skill_page {
+  width: 100%;
+  height: 100%;
+  display: none;
+  pointer-events: none;
+  position: relative;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+html body main .skill_page > section {
+  overflow: hidden;
+  transform: translateY(-100vh);
+}
+html body main .skill_page > section:nth-child(2) {
+  transform: translateY(100vh);
+}
+html body main .skill_page > section > p {
+  transform: translateX(-30vw);
+}
+html body main .skill_page > section > section > article {
+  transform: scale(0);
+}
+html body main .skill_page > section > section > article > article {
+  transform: scale(0);
+}
+html body main .skill_page .front_skill {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  background-color: #F65;
+  align-items: center;
+  order: 1;
+}
+html body main .skill_page .front_skill > p {
+  color: #FFF;
+  font-size: 3vw;
+  font-weight: 600;
+}
+html body main .skill_page .front_skill > section {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+html body main .skill_page .front_skill > section > article {
+  width: 7vw;
+  height: 7vw;
+  position: relative;
+  border-radius: 50%;
+  box-shadow: 0 0 0.3vw #FFF, inset 0 0 2vw #FFF;
+}
+html body main .skill_page .front_skill > section > article > article {
+  position: absolute;
+  top: calc(50% - 3vw);
+  left: calc(50% - 3vw);
+  width: 6vw;
+  height: 6vw;
+  pointer-events: all;
+  cursor: pointer;
+}
+html body main .skill_page .front_skill > section > article .icon_1 {
+  background-image: url("../img/html5-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .front_skill > section > article .icon_2 {
+  background-image: url("../img/css3-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .front_skill > section > article .icon_3 {
+  background-image: url("../img/js-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .front_skill > section > article .icon_4 {
+  background-image: url("../img/pug-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .front_skill > section > article .icon_5 {
+  background-image: url("../img/sass-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .front_skill > section > article .icon_6 {
+  background-image: url("../img/jquery-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .front_skill > section > article .icon_7 {
+  background-image: url("../img/ts_icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .back_skill {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  order: 3;
+}
+html body main .skill_page .back_skill > p {
+  color: #F65;
+  font-size: 3vw;
+  font-weight: 600;
+}
+html body main .skill_page .back_skill > section {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+html body main .skill_page .back_skill > section > article {
+  width: 7vw;
+  height: 7vw;
+  position: relative;
+  border-radius: 50%;
+  box-shadow: 0 0 0.3vw #F65, inset 0 0 2vw #F65;
+}
+html body main .skill_page .back_skill > section > article > article {
+  position: absolute;
+  top: calc(50% - 3vw);
+  left: calc(50% - 3vw);
+  width: 6vw;
+  height: 6vw;
+  pointer-events: all;
+  cursor: pointer;
+}
+html body main .skill_page .back_skill > section > article .icon_1 {
+  background-image: url("../img/java-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .back_skill > section > article .icon_2 {
+  background-image: url("../img/python-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .back_skill > section > article .icon_3 {
+  background-image: url("../img/nodejs-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .back_skill > section > article .icon_4 {
+  background-image: url("../img/mysql-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .back_skill > section > article .icon_5 {
+  background-image: url("../img/json_icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .back_skill > section > article .icon_6 {
+  background-image: url("../img/ajax_icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .etc_skill {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #F65;
+  order: 5;
+}
+html body main .skill_page .etc_skill > p {
+  color: #FFF;
+  font-size: 3vw;
+  font-weight: 600;
+}
+html body main .skill_page .etc_skill > section {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+html body main .skill_page .etc_skill > section > article {
+  width: 7vw;
+  height: 7vw;
+  position: relative;
+  border-radius: 50%;
+  box-shadow: 0 0 0.3vw #FFF, inset 0 0 2vw #FFF;
+}
+html body main .skill_page .etc_skill > section > article > article {
+  position: absolute;
+  top: calc(50% - 3vw);
+  left: calc(50% - 3vw);
+  width: 6vw;
+  height: 6vw;
+  pointer-events: all;
+  cursor: pointer;
+}
+html body main .skill_page .etc_skill > section > article .icon_1 {
+  background-image: url("../img/kotlin-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .etc_skill > section > article .icon_2 {
+  background-image: url("../img/photoshop-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .etc_skill > section > article .icon_3 {
+  background-image: url("../img/git_icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .etc_skill > section > article .icon_4 {
+  background-image: url("../img/github_icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .etc_skill > section > article .icon_5 {
+  background-image: url("../img/vim_icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .etc_skill > section > article .icon_6 {
+  background-image: url("../img/vscode_icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .view_skill {
+  width: 0%;
+  height: 100%;
+  transform: scale(0);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+html body main .skill_page .view_skill .skill_back {
+  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -100;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .view_skill .skill_detail {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  opacity: 1;
+}
+html body main .skill_page .view_skill .skill_detail p {
+  color: #333;
+  text-align: left;
+  margin-bottom: 0.5vw;
+  font-size: 1.8vw;
+  font-weight: 600;
+  font-family: "Jua", sans-serif;
+}
+html body main .skill_page .view_skill .skill_detail p:nth-child(1) {
+  margin-bottom: 1vw;
+  color: #F65;
+  text-align: left;
+  filter: drop-shadow(0.2vw 0.2vw 0 rgba(0, 0, 0, 0.3));
+  font-size: 3vw;
+  font-weight: 700;
+  font-family: "Jua", sans-serif;
+}
+html body main .project_page {
+  width: 100%;
+  height: 100%;
+  display: none;
+  pointer-events: none;
+  position: relative;
+}
+html body main .project_page .main_project {
+  width: 80vw;
+  height: 80vh;
+  position: absolute;
+  z-index: -1;
+  top: 10vh;
+  left: 10vw;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+html body main .project_page .main_project > section {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 0.1vw solid #333;
+}
+html body main .project_page .main_project > section > article {
+  width: 16vw;
+  height: 16vw;
+  pointer-events: all;
+  perspective: 100vw;
+  position: relative;
+}
+html body main .project_page .main_project > section > article > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  transition: all 1s;
+  pointer-events: none;
+  position: absolute;
+  cursor: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+html body main .project_page .main_project > section > article > div:nth-child(1) {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  z-index: -10;
+}
+html body main .project_page .main_project > section > article > div:nth-child(2) {
+  transform: rotateY(0deg);
+  background-color: #F65;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+html body main .project_page .main_project > section > article > div:nth-child(2) p {
+  color: #FFF;
+  font-size: 4vh;
+  font-weight: 600;
+}
+html body main .project_page .main_project > section > article .item_back_1 {
+  background-image: url("../img/matrix_img.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .project_page .main_project > section > article .item_back_2 {
+  background-image: url("../img/tetris_img.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .project_page .main_project > section > article .item_back_3 {
+  background-image: url("../img/cloud_img.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .project_page .main_project > section > article .item_back_4 {
+  background-image: url("../img/hanoi_img.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .project_page .main_project > section > article .item_back_5 {
+  background-image: url("../img/working-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .project_page .main_project > section > article .item_back_6 {
+  background-image: url("../img/working-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .project_page .main_project > section > article .item_back_7 {
+  background-image: url("../img/working-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .project_page .main_project > section > article .item_back_8 {
+  background-image: url("../img/working-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .project_page .main_project > section > article:hover {
+  cursor: pointer;
+}
+html body main .project_page .main_project > section > article:hover > div:nth-child(1) {
+  transform: rotateY(360deg);
+  transition: all 0.5s;
+  z-index: 10;
+}
+html body main .project_page .main_project > section > article:hover > div:nth-child(2) {
+  transform: rotateY(180deg);
+  transition: all 0.5s;
+  z-index: -10;
+}
+html body main .project_page .main_project .project_list_2 > article > div:nth-child(2) {
+  background-color: #888;
+}
+html body main .project_page .detail_project {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 200;
+  top: 100%;
+  left: 0%;
+  transform: scale(0);
+  pointer-events: all;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+html body main .project_page .detail_project .project_popup {
+  width: 80%;
+  height: 80%;
+  border-radius: 1vw;
+  position: relative;
+  filter: drop-shadow(1vw 1vw 2vw rgba(0, 0, 0, 0.3));
+}
+html body main .project_page .detail_project .project_popup .popup_over {
+  border-radius: 1vw;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: radial-gradient(at 0% 40%, transparent 0%, rgba(255, 255, 255, 0.7333333333) 40%, rgba(255, 255, 255, 0.9333333333) 45%, #FFF 55%, #FFF 100%);
+}
+html body main .project_page .detail_project .project_popup .left_pop {
+  width: 50%;
+  height: 90%;
+  position: absolute;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+html body main .project_page .detail_project .project_popup .left_pop article {
+  width: 60%;
+  height: 30%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+html body main .project_page .detail_project .project_popup .left_pop article button {
+  background: transparent;
+  color: #F65;
+  font-size: 3vw;
+  font-weight: 800;
+  pointer-events: all;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+html body main .project_page .detail_project .project_popup .left_pop article button:hover {
+  transform: translate(-1vh, -1vh);
+  filter: drop-shadow(0.5vh 0.5vh 0 rgba(0, 0, 0, 0.3));
+  transition: all 0.5s;
+}
+html body main .project_page .detail_project .project_popup .right_pop {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  z-index: 500;
+  top: 0%;
+  left: 50%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+html body main .project_page .detail_project .project_popup .right_pop .rt_pop {
+  width: 80%;
+  height: 40%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+html body main .project_page .detail_project .project_popup .right_pop .rt_pop p {
+  text-align: left;
+  color: #333;
+  font-size: 2vw;
+  font-weight: 500;
+  font-family: "Jua", sans-serif;
+}
+html body main .project_page .detail_project .project_popup .right_pop .rt_pop p:first-child {
+  color: #F65;
+  margin-bottom: 1vw;
+  font-size: 2.5vw;
+  font-weight: 700;
+  font-family: "Jua", sans-serif;
+  filter: drop-shadow(0.3vh 0.3vh 0 rgba(0, 0, 0, 0.4));
+}
+html body main .project_page .detail_project .project_popup .right_pop > div {
+  width: 80%;
+  height: 0.1vh;
+  background: #F65;
+}
+html body main .project_page .detail_project .project_popup .right_pop > p {
+  width: 80%;
+  color: #333;
+  text-align: center;
+  font-size: 2vw;
+  font-weight: 700;
+  font-family: "Jua", sans-serif;
+}
+html body main .project_page .detail_project .project_popup .right_pop .rb_pop {
+  width: 80%;
+  height: 40%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+html body main .project_page .detail_project .project_popup .right_pop .rb_pop article {
+  width: 20%;
+  height: 40%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+html body main .project_page .detail_project .project_popup .right_pop .rb_pop article div {
+  width: 100%;
+  height: 50%;
+}
+html body main .project_page .detail_project .project_popup .right_pop .rb_pop article p {
+  width: 100%;
+  text-align: center;
+  line-height: 3vw;
+  color: #333;
+  font-size: 1vw;
+  font-weight: 500;
+}
+html body main .project_page .detail_project .project_popup .right_pop > i {
+  position: absolute;
+  top: 5vh;
+  right: 5vh;
+  color: #F65;
+  font-size: 3vw;
+  font-weight: 500;
+  pointer-events: all;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+html body main .project_page .detail_project .project_popup .right_pop > i:hover {
+  transition: all 0.5s;
+  color: #FA1;
+}
+html body main .loading_page {
+  width: 100%;
+  height: 100%;
+  background-color: #F65;
+  position: relative;
+  pointer-events: none;
+  z-index: 99999;
+}
+html body main .loading_page .loading_box {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: #FFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}

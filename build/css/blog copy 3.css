@@ -1,0 +1,875 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+@-webkit-keyframes rotate_img {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate_img {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes un_rotate_img {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes un_rotate_img {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+html {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+html body {
+  width: 100%;
+  height: 100%;
+}
+html body header {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 5000;
+}
+html body header .gnb_area {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+html body header .gnb_area .gnb_main {
+  position: absolute;
+  top: 3vh;
+  right: 3vh;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  background-color: #F65;
+  pointer-events: none;
+  opacity: 0;
+  cursor: pointer;
+}
+html body header .gnb_area .gnb_text {
+  position: absolute;
+  top: -10vh;
+  right: -20vh;
+  width: 20vh;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+html body header .gnb_area .gnb_text p {
+  color: white;
+  font-size: 3vh;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+html body header .gnb_area .gnb_text p:hover {
+  transform: translateX(-1vh);
+  filter: drop-shadow(0.5vh 0.5vh 0 rgba(0, 0, 0, 0.3));
+  transition: all 0.2s;
+}
+html body header .gnb_area .gnb_text i {
+  flex: none;
+  position: absolute;
+  top: -5vh;
+  right: 3vh;
+  color: white;
+  font-size: 3vh;
+  font-font-weight: 900;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+html body header .gnb_area .gnb_text i:hover {
+  filter: drop-shadow(0.5vh 0.5vh 0 rgba(0, 0, 0, 0.3));
+  transition: all 0.2s;
+}
+html body main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  z-index: 1000;
+  pointer-events: all;
+}
+html body main .background_page {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  pointer-events: none;
+}
+html body main .background_page .background_area_1 {
+  width: 80%;
+  height: 100%;
+  right: 0;
+  position: absolute;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+html body main .background_page .background_area_1 > p {
+  color: #000;
+  font-size: 10vw;
+  font-weight: 600;
+}
+html body main .background_page .background_area_2 {
+  width: 100%;
+  height: 100%;
+}
+html body main .background_page .background_area_2 div {
+  width: 100%;
+  height: 0.1vw;
+  background-color: #444;
+  position: absolute;
+  left: 0;
+}
+html body main .background_page .background_area_2 div:nth-child(1) {
+  top: 90vh;
+}
+html body main .background_page .background_area_2 div:nth-child(2) {
+  top: 95vh;
+}
+html body main .home_page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  display: none;
+}
+html body main .home_page .card_list {
+  width: 100%;
+  height: 50vh;
+  position: absolute;
+  top: 30vh;
+  transform-origin: center bottom;
+}
+html body main .home_page .card_list .card_item {
+  position: absolute;
+  width: 24vw;
+  height: 28.5vw;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+html body main .home_page .card_list .card_item > article:first-child {
+  width: 95%;
+  height: 100%;
+  background-color: #FFF;
+  border: 0.15vw solid #333;
+  pointer-events: all;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+html body main .home_page .card_list .card_item > article:first-child > section {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
+}
+html body main .home_page .card_list .card_item > article:first-child > section > article {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+html body main .home_page .card_list .card_item > article:first-child .img_over {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #FFF;
+  z-index: 100;
+  opacity: 1;
+  pointer-events: none;
+}
+html body main .home_page .card_list .card_item > article:first-child > article:last-child {
+  width: 95%;
+  height: 95%;
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+html body main .home_page .card_list .card_item > article:first-child > article:last-child > p {
+  font-size: 3vw;
+  font-weight: 700;
+}
+html body main .home_page .card_list .card_item .inner_box_1 .inner_img > article {
+  background-image: url("../img/photo.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .home_page .card_list .card_item .inner_box_2 .inner_img > article {
+  background-image: url("../img/photo2.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .home_page .card_list .card_item .inner_box_3 .inner_img > article {
+  background-image: url("../img/photo3.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .home_page .card_list .card_item .inner_box_4 .inner_img > article {
+  background-image: url("../img/photo4.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .home_page .card_list .card_item > div:last-child {
+  width: 0.1vw;
+  height: 100%;
+  background-color: #AAA;
+}
+html body main .home_page .card_list .card_1, html body main .home_page .card_list .card_5 {
+  top: -5vh;
+}
+html body main .home_page .card_list .card_1 > div:last-child, html body main .home_page .card_list .card_5 > div:last-child {
+  height: 100vh;
+}
+html body main .home_page .card_list .card_2, html body main .home_page .card_list .card_6 {
+  top: 11vh;
+}
+html body main .home_page .card_list .card_2 > div:last-child, html body main .home_page .card_list .card_6 > div:last-child {
+  height: 100vh;
+}
+html body main .home_page .card_list .card_3, html body main .home_page .card_list .card_7 {
+  top: 0vh;
+}
+html body main .home_page .card_list .card_3 > div:last-child, html body main .home_page .card_list .card_7 > div:last-child {
+  height: 65vh;
+}
+html body main .home_page .card_list .card_4, html body main .home_page .card_list .card_8 {
+  top: 6vh;
+}
+html body main .about_page {
+  width: 100%;
+  height: 100%;
+  display: none;
+  pointer-events: none;
+  position: relative;
+}
+html body main .about_page .left_about {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+html body main .about_page .left_about article {
+  width: 60vh;
+  height: 60vh;
+  overflow: hidden;
+  border-radius: 90% 80% 90% 80%/80% 90% 80% 90%;
+  -webkit-animation: rotate_img 10s infinite linear;
+  animation: rotate_img 10s infinite linear;
+  filter: drop-shadow(0 0 3vh rgba(0, 0, 0, 0.3));
+}
+html body main .about_page .left_about article div {
+  width: 60vh;
+  height: 60vh;
+  -webkit-animation: un_rotate_img 10s infinite linear;
+  animation: un_rotate_img 10s infinite linear;
+  background-image: url("../img/photo.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .about_page .right_about {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+html body main .about_page .right_about p {
+  width: 40vw;
+  color: #333;
+  text-align: left;
+  font-size: 3vw;
+  font-weight: 600;
+  font-family: "Jua", sans-serif;
+}
+html body main .about_page .sub_about {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 20vh;
+  bottom: 5vh;
+  border-bottom: 0.1vh solid #F65;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+html body main .about_page .sub_about article {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+}
+html body main .about_page .sub_about article i, html body main .about_page .sub_about article p {
+  display: inline-block;
+  color: #333;
+  font-size: 2vw;
+  font-weight: 500;
+}
+html body main .about_page .sub_about article i {
+  color: #F65;
+}
+html body main .about_page .sub_about article:nth-child(2) {
+  width: 20%;
+}
+html body main .time_page {
+  width: 100%;
+  height: 100%;
+  display: none;
+  pointer-events: none;
+  position: relative;
+}
+html body main .time_page .time_bar {
+  width: 10vw;
+  height: 100vh;
+  position: absolute;
+  left: 10vw;
+  top: 0;
+  background-color: #F65;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+html body main .time_page .time_bar p {
+  color: #FFF;
+  letter-spacing: 0.3vw;
+  font-size: 2.5vw;
+  font-weight: 500;
+  font-family: "Jua", sans-serif;
+}
+html body main .time_page .right_time {
+  width: 70vw;
+  height: 100vh;
+  position: absolute;
+  left: 30vw;
+  top: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+html body main .time_page .right_time article {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+html body main .time_page .right_time article p {
+  text-align: left;
+  color: #333;
+  font-size: 1.5vw;
+  font-weight: 500;
+  font-family: "Jua", sans-serif;
+}
+html body main .time_page .right_time article p span {
+  margin-left: 3vw;
+  text-align: left;
+  color: #333;
+  font-size: 1.5vw;
+  font-weight: 500;
+  font-family: "Jua", sans-serif;
+}
+html body main .skill_page {
+  width: 100%;
+  height: 100%;
+  display: none;
+  pointer-events: none;
+  position: relative;
+}
+html body main .skill_page .left_skill {
+  width: 40%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+html body main .skill_page .left_skill > section {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  border-bottom: 0.1vh solid #F65;
+}
+html body main .skill_page .left_skill > section article {
+  width: 15vh;
+  height: 15vh;
+  pointer-events: all;
+  filter: grayscale(100%);
+  cursor: pointer;
+}
+html body main .skill_page .left_skill > section .icon_1 {
+  background-image: url("../img/html5-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .left_skill > section .icon_2 {
+  background-image: url("../img/css3-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .left_skill > section .icon_3 {
+  background-image: url("../img/js-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .left_skill > section .icon_4 {
+  background-image: url("../img/jquery-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .left_skill > section .icon_5 {
+  background-image: url("../img/pug-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .left_skill > section .icon_6 {
+  background-image: url("../img/sass-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .left_skill > section .icon_7 {
+  background-image: url("../img/java-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .left_skill > section .icon_8 {
+  background-image: url("../img/nodejs-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .left_skill > section .icon_9 {
+  background-image: url("../img/mysql-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .left_skill > section .icon_10 {
+  background-image: url("../img/kotlin-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .left_skill > section .icon_11 {
+  background-image: url("../img/python-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .left_skill > section .icon_12 {
+  background-image: url("../img/photoshop-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .right_skill {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 45%;
+  transform: scale(0);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+html body main .skill_page .right_skill .skill_back {
+  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -100;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+html body main .skill_page .right_skill .skill_detail {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  opacity: 1;
+}
+html body main .skill_page .right_skill .skill_detail p {
+  color: #333;
+  text-align: left;
+  font-size: 1.8vw;
+  font-weight: 600;
+  font-family: "Jua", sans-serif;
+}
+html body main .project_page {
+  width: 100%;
+  height: 100%;
+  display: none;
+  pointer-events: none;
+  position: relative;
+}
+html body main .project_page .main_project {
+  width: 80vw;
+  height: 80vh;
+  position: absolute;
+  z-index: -1;
+  top: 10vh;
+  left: 10vw;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+html body main .project_page .main_project > section {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 0.1vw solid #333;
+}
+html body main .project_page .main_project > section > article {
+  width: 16vw;
+  height: 16vw;
+  pointer-events: all;
+  perspective: 100vw;
+  position: relative;
+}
+html body main .project_page .main_project > section > article > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  transition: all 1s;
+  pointer-events: none;
+  position: absolute;
+  cursor: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+html body main .project_page .main_project > section > article > div:nth-child(1) {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  z-index: -10;
+}
+html body main .project_page .main_project > section > article > div:nth-child(2) {
+  transform: rotateY(0deg);
+  background-color: #F65;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+html body main .project_page .main_project > section > article > div:nth-child(2) p {
+  color: #FFF;
+  font-size: 4vh;
+  font-weight: 600;
+}
+html body main .project_page .main_project > section > article .item_back_1 {
+  background-image: url("../img/matrix_img.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .project_page .main_project > section > article .item_back_2 {
+  background-image: url("../img/tetris_img.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .project_page .main_project > section > article .item_back_3 {
+  background-image: url("../img/cloud_img.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .project_page .main_project > section > article .item_back_4 {
+  background-image: url("../img/hanoi_img.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .project_page .main_project > section > article .item_back_5 {
+  background-image: url("../img/working-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .project_page .main_project > section > article .item_back_6 {
+  background-image: url("../img/working-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .project_page .main_project > section > article .item_back_7 {
+  background-image: url("../img/working-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .project_page .main_project > section > article .item_back_8 {
+  background-image: url("../img/working-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+html body main .project_page .main_project > section > article:hover {
+  cursor: pointer;
+}
+html body main .project_page .main_project > section > article:hover > div:nth-child(1) {
+  transform: rotateY(360deg);
+  transition: all 0.5s;
+  z-index: 10;
+}
+html body main .project_page .main_project > section > article:hover > div:nth-child(2) {
+  transform: rotateY(180deg);
+  transition: all 0.5s;
+  z-index: -10;
+}
+html body main .project_page .detail_project {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 200;
+  top: 100%;
+  left: 0%;
+  transform: scale(0);
+  pointer-events: all;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+html body main .project_page .detail_project .project_popup {
+  width: 80%;
+  height: 80%;
+  border-radius: 1vw;
+  position: relative;
+  filter: drop-shadow(1vw 1vw 2vw rgba(0, 0, 0, 0.3));
+}
+html body main .project_page .detail_project .project_popup .popup_over {
+  border-radius: 1vw;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: radial-gradient(at 0% 40%, transparent 0%, rgba(255, 255, 255, 0.7333333333) 40%, rgba(255, 255, 255, 0.9333333333) 45%, #FFF 55%, #FFF 100%);
+}
+html body main .project_page .detail_project .project_popup .left_pop {
+  width: 50%;
+  height: 90%;
+  position: absolute;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+html body main .project_page .detail_project .project_popup .left_pop article {
+  width: 60%;
+  height: 30%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+html body main .project_page .detail_project .project_popup .left_pop article button {
+  background: transparent;
+  color: #F65;
+  font-size: 3vw;
+  font-weight: 800;
+  pointer-events: all;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+html body main .project_page .detail_project .project_popup .left_pop article button:hover {
+  transform: translate(-1vh, -1vh);
+  filter: drop-shadow(0.5vh 0.5vh 0 rgba(0, 0, 0, 0.3));
+  transition: all 0.5s;
+}
+html body main .project_page .detail_project .project_popup .right_pop {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  z-index: 500;
+  top: 0%;
+  left: 50%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+html body main .project_page .detail_project .project_popup .right_pop .rt_pop {
+  width: 80%;
+  height: 40%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+html body main .project_page .detail_project .project_popup .right_pop .rt_pop p {
+  text-align: left;
+  color: #333;
+  font-size: 2vw;
+  font-weight: 500;
+  font-family: "Jua", sans-serif;
+}
+html body main .project_page .detail_project .project_popup .right_pop .rt_pop p:first-child {
+  color: #F65;
+  margin-bottom: 1vw;
+  font-size: 2.5vw;
+  font-weight: 700;
+  font-family: "Jua", sans-serif;
+  filter: drop-shadow(0.3vh 0.3vh 0 rgba(0, 0, 0, 0.4));
+}
+html body main .project_page .detail_project .project_popup .right_pop > div {
+  width: 80%;
+  height: 0.1vh;
+  background: #F65;
+}
+html body main .project_page .detail_project .project_popup .right_pop > p {
+  width: 80%;
+  color: #333;
+  text-align: center;
+  font-size: 2vw;
+  font-weight: 700;
+  font-family: "Jua", sans-serif;
+}
+html body main .project_page .detail_project .project_popup .right_pop .rb_pop {
+  width: 80%;
+  height: 40%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+html body main .project_page .detail_project .project_popup .right_pop .rb_pop article {
+  width: 20%;
+  height: 40%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+html body main .project_page .detail_project .project_popup .right_pop .rb_pop article div {
+  width: 100%;
+  height: 50%;
+}
+html body main .project_page .detail_project .project_popup .right_pop .rb_pop article p {
+  width: 100%;
+  text-align: center;
+  line-height: 3vw;
+  color: #333;
+  font-size: 1vw;
+  font-weight: 500;
+}
+html body main .project_page .detail_project .project_popup .right_pop > i {
+  position: absolute;
+  top: 5vh;
+  right: 5vh;
+  color: #F65;
+  font-size: 3vw;
+  font-weight: 500;
+  pointer-events: all;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+html body main .project_page .detail_project .project_popup .right_pop > i:hover {
+  transition: all 0.5s;
+  color: #FA1;
+}
+html body main .loading_page {
+  width: 100%;
+  height: 100%;
+  background-color: #F65;
+  position: relative;
+  pointer-events: none;
+  z-index: 99999;
+}
+html body main .loading_page .loading_box {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: #FFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}

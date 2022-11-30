@@ -1,0 +1,129 @@
+@charset "UTF-8";
+* { 
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  border: none;
+}
+
+@mixin set_flex($display, $flex_flow, $justify, $item){
+  display: $display;
+  flex-flow: $flex_flow;
+  justify-content: $justify;
+  align-items: $item;
+}
+
+
+#wrapper{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  height:100vh;
+  background:#000;
+  .cont{
+    position:absolute;
+    overflow:hidden;
+    width:100%;
+    height:100vh;
+    left:0;
+  }
+  #cont_2{
+    top:0%;
+    background:#fff;
+    transition:top 1s;
+  }
+}
+#slider{
+  display:flex;
+  align-items:flex-start;
+  position:absolute;
+  height:300px;
+  top:calc(50% - 150px);
+  left:10vw;
+  background:#eee;
+  transition:transform .3s;
+}
+
+#slider li{
+  flex:none;
+  display:flex;
+  justify-content:center;align-items:center;
+  position:relative; 
+  overflow:hidden;
+  height:100%;
+  aspect-ratio:1/1;
+  margin:0 200px 0 0;
+  background:slategray;
+  border:2px solid black;
+  transition:transform .2s;
+}
+
+  #slider li:nth-child(2n){top:-30%;}
+  #slider li:nth-child(3n){top:30%;}
+
+#slider li div{
+  position:relative;z-index:5;
+  width:calc(100% - 4rem);height:calc(100% - 4rem);
+  background:rgba(255,255,255,.5);
+}
+.redSpan{
+  display:block;position:absolute;
+  left:0;top:0;
+  width:10px;height:10px;
+  background:salmon;
+  border-radius:50%;
+  transform:scale(.1);
+  transition:all .8s;
+}
+
+
+/*
+html {
+  width: 100%;
+  height: 100vh;
+  body {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    header {
+
+    }    // ------------------------- header
+    main {
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      overflow: hidden;
+      left: 0;
+      top: 0;
+      background-color: darkgrey;
+      section:nth-child(1) {
+        display:flex;
+        align-items:flex-start;
+        position:absolute;
+        height:300px;
+        top:calc(50% - 150px); left:10vw;
+        background:#eee;
+        transition:transform .3s;
+        div {
+          flex: none;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          position:relative;
+          overflow:hidden;
+          height:100%;
+          aspect-ratio:1/1;
+          margin:0 200px 0 0;
+          background:slategray;
+          border:2px solid black;
+          transition:transform .2s;
+        }
+      }   // --------------------------- section
+    }   // --------------------------- main
+  }   // --------------------------- body
+}   // ---------------------------- html
+*/
